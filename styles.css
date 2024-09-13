@@ -1,0 +1,592 @@
+/* General Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+.main-header {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.top-bar {
+  background-color: #0044cc;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-icons img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.header-content img {
+  width: 300px;
+}
+
+.header-content nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.header-content nav a:hover {
+  color: #0044cc;
+}
+
+/* Hero Section */
+.hero {
+  height: 60vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  position: absolute; /* Make carousel occupy the full hero section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.hero-content {
+  position: absolute; /* Position hero content on top of the carousel */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Ensure hero content is above the carousel */
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  width: 80%;
+}
+
+.hero-content h2 {
+  font-size: 4rem; /* Adjusted font size */
+  text-align:left;
+}
+
+.hero-content p {
+  font-size: 1.5rem; /* Adjusted font size */
+  text-align:left;
+}
+
+.hero-content button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #0044cc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-direction: row; /* Row layout by default (for larger screens) */
+  padding: 50px;
+  align-items: center;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: url('./images/about.jpg') no-repeat center center/cover;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row; /* Row layout for larger screens */
+  align-items: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-content img {
+  max-width: 400px;
+  margin-right: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for better visual separation */
+}
+
+.about-text p {
+  text-align: left;
+  background-color: #26458d;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for better visual separation */
+  border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+.about-text h2, p{
+  color: white;
+}
+
+/* Listings Section */
+.listings-section {
+  margin: 0 auto;
+  padding: 50px 20px; /* Adjusted padding for better responsiveness */
+  background-color: rgb(238, 238, 238);
+  max-width: 100%; /* Limits the width of the section on larger screens */
+}
+
+.listings-section h2 {
+  font-size: 2rem; /* Uniform font size */
+  text-align: center;
+  margin-bottom: 30px; /* Space below the heading */
+}
+
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted min-width for better responsiveness */
+  gap: 20px; /* Space between grid items */
+}
+
+.property-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for better visual separation */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.property-card img {
+  width: 100%;
+  height: auto;
+  max-width: 100%; /* Ensure images are responsive */
+  border-radius: 8px; /* Match card corners */
+}
+
+.property-card h3, .property-card p {
+  margin: 10px 0;
+  color: black;
+}
+
+.btn-secondary {
+  background-color: #0044cc;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px; /* Increased padding for better touch targets */
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s; /* Smooth color transition on hover */
+}
+
+.btn-secondary:hover {
+  background-color: #0033aa; /* Darker color on hover */
+}
+
+/* How to Buy a Property Section */
+.buy-property-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url('./images/BUY.jpg');
+  color: white;
+  padding: 80px 50px; /* Increased padding for more space */
+}
+
+.buy-property-section h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.buy-steps {
+  display: flex;
+  flex-direction: row; /* Row layout by default (for larger screens) */
+  justify-content: space-between;
+  height: auto;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: rgba(52, 73, 94, 0.8);
+  text-align: center;
+}
+
+.step p {
+  text-align: left;
+}
+
+/* Learn More Section */
+.learn-more-section {
+  background-color: white;
+  padding: 50px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.meen, .meen2 {
+  width: 50%;
+}
+
+.learn-more-section h2 {
+  color: #0044cc;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.learn-more-section p {
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.contact-form input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  margin-top: 50px;
+  padding: 15px 30px;
+  background-color: #0044cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/* Parallax Effect */
+.parallax {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+}
+
+.sell-property {
+  background-image: url('./images/SELL.jpg'); /* Add your parallax image here */
+}
+
+.contact {
+  background-image: url('./images/contact.jpg'); /* Add your parallax image here */
+}
+
+/* Section Overlay */
+.overlay {
+  padding: 3em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 50px;
+  flex-wrap: nowrap; /* Keep flexbox layout on larger screens */
+}
+
+/* Sell Property Section Content */
+.sell-property .content {
+  max-width: 45%;
+  text-align: left;
+  margin-left: 5%;
+}
+
+.sell-property .form {
+  max-width: 45%;
+  background: #ffffff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  color: black;
+  margin-right: 5%;
+  height: auto;
+}
+
+/* Text and Form Styling */
+.sell-property h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  color: white;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+}
+
+.sell-property p {
+  margin-bottom: 1.5em;
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+/* Form Inputs */
+.sell-property input,
+.contact input {
+  width: 90%;
+  padding: 15px;
+  margin-bottom: 1.2em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.sell-property button,
+.contact button {
+  width: 90%;
+  padding: 15px;
+  background-color: #0044cc;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Contact Section */
+.contact .overlay {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 500px;
+  background: #ffffff;
+  padding: 3em;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 1em 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-left,
+.footer-right {
+  margin: 10px;
+}
+
+.footer-left p,
+.footer-right p {
+  line-height: 1.8;
+}
+
+.footer-right p {
+  text-align: right;
+}
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Header */
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-content nav {
+    margin-top: 20px;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    padding: 5px;
+    width: 80%;
+  }
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-content button {
+    margin-top: 20px;
+    font-size: smaller;
+  }
+
+  /* About Section */
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    flex-direction: column; /* Flex to column on mobile */
+  }
+
+  .about-content img {
+    margin-bottom: 20px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+  .listings-section {
+    padding: 30px 15px; /* Adjusted padding for smaller screens */
+  }
+
+  .listings-section h2 {
+    font-size: 1.5rem; /* Smaller font size for smaller screens */
+    margin-bottom: 20px; /* Reduced margin */
+  }
+
+  .property-card {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  .btn-secondary {
+    padding: 8px 15px; /* Reduced padding for buttons on smaller screens */
+    font-size: 14px; /* Smaller font size */
+  }
+
+/* Buy Property Section */
+.buy-steps {
+  flex-direction: column; /* Flex to column on mobile */
+  align-items: center; /* Align contents to the center */
+}
+
+.step {
+  margin-bottom: 20px;
+  text-align: center; /* Center text content */
+}
+
+/* Learn More Section */
+.learn-more-section {
+  flex-direction: column;
+  text-align: center; /* Center text for this section */
+}
+
+.meen,
+.meen2 {
+  width: 100%; /* Ensure full width on mobile */
+  text-align: center; /* Center content */
+}
+
+  .overlay {
+    flex-direction: column; /* Stack content vertically */
+    padding: 2em 1em;
+  }
+
+  /* Centering content in .sell-property and .contact */
+.sell-property .content,
+.sell-property .form,
+.contact .content,
+.contact .form {
+  max-width: 100%; /* Full width for both content and form */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sell-property h1,
+.contact h2 {
+  font-size: 2rem; /* Adjusted font size for headings */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.sell-property p {
+  font-size: 1rem; /* Font size for paragraphs */
+  margin-bottom: 20px; /* Space below paragraphs */
+  text-align: left;
+  padding: 20px;
+}
+
+.sell-property input,
+.contact input,
+.sell-property button,
+.contact button {
+  display: block; /* Ensures full width on mobile */
+  width: 80%; /* Adjust width to center elements */
+  max-width: 400px; /* Limit width for larger screens */
+  margin: 10px auto; /* Center elements horizontally */
+  padding: 10px; /* Padding for inputs and buttons */
+}
+
+.sell-property .form,
+.contact-form {
+  padding: 2em;
+  max-width: 600px; /* Adjust max-width to fit the form */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-right p {
+    text-align: center;
+  }
+}
